@@ -3,12 +3,12 @@ describe "SerpApi Desktop JSON" do
   describe "Organic Results for Apple" do
 
     before :all do
-      @response = HTTP.get 'https://serpapi.com/search.json?q=Apple&location=Dallas&hl=en&gl=us&source=test'
-      @json = JSON.parse @response
+      @response = open 'https://serpapi.com/search.json?q=Apple&location=Dallas&hl=en&gl=us&source=test'
+      @json = JSON.parse @response.read
     end
 
     it "returns http success" do
-      expect(@response.code).to be(200)
+      expect(@response.status[0].to_i).to be(200)
     end
 
     it "contains organic results array" do
