@@ -33,7 +33,6 @@ describe "SerpApi Desktop JSON" do
         expect(@result["link"]).to eql("https://www.apple.com/")
         expect(@result["displayed_link"]).to eql("https://www.apple.com/")
         expect(@result["cached_page_link"]).to start_with("https://webcache.googleusercontent.com/")
-        expect(@result["related_pages_link"]).to be_nil
       end
 
       it "has a snippet" do 

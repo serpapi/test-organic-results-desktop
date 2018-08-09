@@ -15,14 +15,14 @@ describe "SerpApi Desktop JSON" do
       expect(@json["organic_results"]).to be_an(Array)
     end
 
-    describe "have fourth Wikipedia result" do
+    describe "have Wikipedia result" do
 
       before :all do
-        @result = @json["organic_results"][3]
+        @result = @json["organic_results"].detect{|e| e["title"] == "قهوة - ويكيبيديا، الموسوعة الحرة"}
       end
 
-      it "is fourth" do
-        expect(@result["position"]).to be(4)
+      it "has Interger position" do
+        expect(@result["position"]).to be_an(Integer)
       end
 
       it "titles wikipedia" do

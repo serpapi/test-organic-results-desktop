@@ -26,11 +26,11 @@ describe "SerpApi Desktop JSON" do
       end
 
       it "titles Booking.com" do
-        expect(@result["title"]).to eql("Hotel Hilton Austin, TX - Booking.com")
+        expect(@result["title"]).to eql("Hotel Hilton Austin Airport, TX - Booking.com")
       end
 
       it "links Booking.com" do
-        expect(@result["link"]).to eql("https://www.booking.com/hotel/us/hilton-austin.html")
+        expect(@result["link"]).to eql("https://www.booking.com/hotel/us/hilton-austin-airport.html")
         expect(@result["displayed_link"]).to eql("https://www.booking.com › USA › Texas › Greater Austin › Austin Hotels")
         expect(@result["cached_page_link"]).to be(nil)
         expect(@result["related_pages_link"]).to be(nil)
