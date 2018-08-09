@@ -15,22 +15,22 @@ describe "SerpApi Desktop JSON" do
       expect(@json["organic_results"]).to be_an(Array)
     end
 
-    describe "have fourth booking.com result" do
+    describe "have booking.com result" do
 
       before :all do
-        @result = @json["organic_results"][3]
+        @result = @json["organic_results"].detect{|e| e["title"] == "Hotel Hilton Austin, TX - Booking.com"}
       end
 
-      it "is fourth" do
-        expect(@result["position"]).to be(4)
+      it "has an Integer position" do
+        expect(@result["position"]).to be_an(Integer)
       end
 
       it "titles Booking.com" do
-        expect(@result["title"]).to eql("Hotel Hilton Austin Airport, TX - Booking.com")
+        expect(@result["title"]).to eql("Hotel Hilton Austin, TX - Booking.com")
       end
 
       it "links Booking.com" do
-        expect(@result["link"]).to eql("https://www.booking.com/hotel/us/hilton-austin-airport.html")
+        expect(@result["link"]).to eql("https://www.booking.com/hotel/us/hilton-austin.html")
         expect(@result["displayed_link"]).to eql("https://www.booking.com › USA › Texas › Greater Austin › Austin Hotels")
         expect(@result["cached_page_link"]).to be(nil)
         expect(@result["related_pages_link"]).to be(nil)
