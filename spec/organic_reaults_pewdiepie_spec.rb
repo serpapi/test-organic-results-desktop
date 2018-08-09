@@ -3,12 +3,12 @@ describe "SerpApi Desktop JSON" do
   describe "Organic Results for Pewdiepie Montage" do
 
     before :all do
-      @response = open 'https://serpapi.com/search.json?q=Pewdiepie+Montage&location=Dallas&hl=en&gl=us&source=test'
-      @json = JSON.parse @response.read
+      @response = HTTP.get 'https://serpapi.com/search.json?q=Pewdiepie+Montage&location=Dallas&hl=en&gl=us&source=test'
+      @json = @response.parse
     end
 
     it "returns http success" do
-      expect(@response.status[0].to_i).to be(200)
+      expect(@response.code).to be(200)
     end
 
     it "contains organic results array" do
