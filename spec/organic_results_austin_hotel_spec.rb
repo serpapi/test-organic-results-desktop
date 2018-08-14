@@ -78,8 +78,8 @@ describe "SerpApi Desktop JSON" do
       it "links Hotels.com" do
         expect(@result["link"]).to eql("https://www.hotels.com/ho216352/hilton-austin-austin-united-states-of-america/")
         expect(@result["displayed_link"]).to eql("https://www.hotels.com › ... › Texas Hotels › Austin Hotels")
-        expect(@result["cached_page_link"]).to start_with("https://webcache.googleusercontent.com/")
-        expect(@result["related_pages_link"]).to start_with("https://www")
+        expect(@result["cached_page_link"]).to be(nil)
+        expect(@result["related_pages_link"]).to be(nil)
       end
 
       it "has a snippet" do 
