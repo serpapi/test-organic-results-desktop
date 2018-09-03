@@ -26,12 +26,12 @@ describe "SerpApi Desktop JSON" do
       end
 
       it "titles Pewdiepie" do
-        expect(@result["title"]).to eql("FUNNY MONTAGE.. #2 - YouTube")
+        expect(@result["title"]).to eql("FUNNY GAMING MONTAGE! - YouTube")
       end
 
       it "links Pewdiepie video" do
-        expect(@result["link"]).to eql("https://www.youtube.com/watch?v=MkXVM6ad9nI")
-        expect(@result["displayed_link"]).to eql("https://www.youtube.com/watch?v=MkXVM6ad9nI")
+        expect(@result["link"]).to eql("https://www.youtube.com/watch?v=rc1XYAJCZ80")
+        expect(@result["displayed_link"]).to eql("https://www.youtube.com/watch?v=rc1XYAJCZ80")
         expect(@result["cached_page_link"]).to be(nil)
       end
 
