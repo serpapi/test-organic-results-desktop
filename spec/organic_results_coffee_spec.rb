@@ -15,6 +15,15 @@ describe "SerpApi Desktop JSON" do
       expect(@json["organic_results"]).to be_an(Array)
     end
 
+    it "total_results" do
+      expect(@json["search_information"]["total_results"]).to be_an(Integer)
+      expect(@json["search_information"]["total_results"]).to be > 1000000
+    end
+
+    it "time_taken_displayed" do
+      expect(@json["search_information"]["time_taken_displayed"]).to be_an(Float)
+    end
+
     describe "have first Wikipedia result" do
 
       before :all do

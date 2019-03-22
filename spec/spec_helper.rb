@@ -105,3 +105,13 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+# Mock SerpApi.com when developing locally
+unless ENV["CI"]
+  module HTTP
+    def self.get url
+      url = url.gsub("https://serpapi.com", "http://localhost:3000")
+      super
+    end
+  end
+end
