@@ -3,7 +3,7 @@ describe "SerpApi Desktop JSON" do
   describe "Organic Results for Coffee in Arabic" do
 
     before :all do
-      @response = HTTP.get 'https://serpapi.com/search.json?q=%D9%82%D9%87%D9%88%D8%A9&location=Saudi+Arabia&hl=ar&gl=sa&google_domain=google.com.sa&source=test'
+      @response = HTTP.get 'https://serpapi.com/search.json?q=wikipedia+%D9%82%D9%87%D9%88%D8%A9&location=Saudi+Arabia&hl=ar&gl=sa&google_domain=google.com.sa&source=test'
       @json = @response.parse
     end
 
