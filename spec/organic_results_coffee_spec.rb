@@ -49,11 +49,11 @@ describe "SerpApi Desktop JSON" do
         expect(@result["snippet"]).to_not be_empty
       end
 
-      it "has inline sitelinks" do
+      it "has expanded sitelinks" do
         expect(@result["sitelinks"]).to be_a(Hash)
-        expect(@result["sitelinks"]["inline"]).to be_a(Array)
-        expect(@result["sitelinks"]["inline"][0]["title"]).to_not be_empty
-        expect(@result["sitelinks"]["inline"][0]["link"]).to_not be_empty
+        expect(@result["sitelinks"]["expanded"]).to be_a(Array)
+        expect(@result["sitelinks"]["expanded"][0]["title"]).to_not be_empty
+        expect(@result["sitelinks"]["expanded"][0]["link"]).to_not be_empty
       end
 
     end
